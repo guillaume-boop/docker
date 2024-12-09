@@ -13,4 +13,5 @@ docker pull nginx
 //run de l'image nginx avec le port 80//
 docker run --name nginx -d -p 8080:80 nginx
 
-//accedder à l'url//
+//acceder à l'url//
+http://localhost:8080/
