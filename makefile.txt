@@ -1,8 +1,0 @@
-//Pull l'image de mongodb//
-docker pull mongo
-
-//run de l'image de mongo db//
-docker run -d -p 27017:27017 mongo
-
-//verifier l'état du conteneur//
-docker ps
