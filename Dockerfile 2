@@ -1,0 +1,20 @@
+FROM ubuntu AS init
+
+WORKDIR /fichier
+
+RUN touch /fichier/fichier.txt
+RUN echo "Bonjour" > /fichier/fichier.txt
+
+FROM ubuntu AS bonjour 
+
+WORKDIR /fichier
+
+COPY --from=init /fichier/fichier.txt .
+
+RUN echo "Bonjour" > fichier.txt
+CMD [ "cat", "fichier.txt" ]
+
+FROM bonjour
+
+RUN echo "Bonjour, Guillaume" > fichier.txt
+CMD [ "cat", "fichier.txt" ]
